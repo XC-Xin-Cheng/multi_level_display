@@ -1,6 +1,9 @@
 name: Build Pull Request Artifacts
 on: pull_request
 
+permissions:
+  actions: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
