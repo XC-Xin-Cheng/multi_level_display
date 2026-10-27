@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "multi_level_display",
+  "version": "${version}",
+  "name": "Multi-Level Display",
+  "description": "Adds switchable display layers to the Meteor Client modules GUI.",
+  "authors": [
+    "XC_Xin_Cheng"
+  ],
+  "contact": {
+    "sources": "https://github.com/MeteorDevelopment/meteor-addon-template"
+  },
+  "environment": "client",
+  "entrypoints": {
+    "meteor": [
+      "com.example.layers.LayersAddon"
+    ]
+  },
+  "mixins": [
+    "multi_level_display.mixins.json"
+  ],
+  "custom": {
+    "meteor-client:color": "150,80,255",
+    "modmenu": {
+      "parent": {
+        "id": "meteor-client"
+      }
+    }
+  },
+  "depends": {
+    "java": ">=${jdk_version}",
+    "minecraft": "${minecraft_version}",
+    "meteor-client": "*"
+  }
+}
