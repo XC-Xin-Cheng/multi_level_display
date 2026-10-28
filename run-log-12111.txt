@@ -1,0 +1,236 @@
+Calculating task graph as no cached configuration is available for tasks: runTestClient
+
+> Configure project :
+Fabric Loom: 1.14.10
+
+> Task :processResources UP-TO-DATE
+> Task :compileJava UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :generateLog4jConfig
+> Task :generateRemapClasspath
+> Task :generateDLIConfig
+> Task :configureLaunch
+> Task :downloadAssets
+> Task :configureClientLaunch
+
+> Task :runTestClient
+[00:17:00] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.21.11 with Fabric Loader 0.18.2
+[00:17:00] [main/INFO] (FabricLoader) Loading 8 mods:
+	- fabric-api-base 1.0.5+4ebb5c083e
+	- fabric-resource-loader-v1 1.0.10+78c8b4663e
+	- fabricloader 0.18.2
+	- java 25
+	- meteor-client 1.21.11-86
+	- minecraft 1.21.11
+	- mixinextras 0.5.0
+	- multi_level_display 1.2.0
+[00:17:00] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/qhad/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.16.5+mixin.0.8.7/80fc3a9f592673cea87f4cd702f87991c6c9fe4d/sponge-mixin-0.16.5+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
+[00:17:01] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[00:17:01] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_21
+[00:17:02] [main/WARN] (FabricLoader/Mixin) Error loading class: baritone/command/defaults/ComeCommand (java.lang.ClassNotFoundException: baritone/command/defaults/ComeCommand)
+[00:17:02] [main/WARN] (FabricLoader/Mixin) @Mixin target baritone.command.defaults.ComeCommand was not found meteor-client-baritone.mixins.json:ComeCommandMixin from mod meteor-client
+[00:17:03] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by com.sun.jna.Native in an unnamed module (file:/C:/Users/qhad/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/5.17.0/33d12735bef894440780fce64f9758d420c7bae2/jna-5.17.0.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+[00:17:05] [Datafixer Bootstrap/INFO] (Minecraft) 287 Datafixer optimizations took 864 milliseconds
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.joml.MemUtil$MemUtilUnsafe (file:/C:/Users/qhad/.gradle/caches/modules-2/files-2.1/org.joml/joml/1.10.8/fc0a71dad90a2cf41d82a76156a0e700af8e4f8d/joml-1.10.8.jar)
+WARNING: Please consider reporting this to the maintainers of class org.joml.MemUtil$MemUtilUnsafe
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[00:17:17] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[00:17:17] [Render thread/INFO] (Minecraft) Setting user: Player821
+[00:17:17] [Render thread/INFO] (Minecraft) [STDERR]: [LWJGL] [ThreadLocalUtil] Unsupported JNI version detected, this may result in a crash. Please inform LWJGL developers.
+[00:17:17] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.3-snapshot
+[00:17:18] [Render thread/INFO] (Minecraft) Using optional rendering extensions: GL_ARB_buffer_storage, GL_KHR_debug, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access, GL_EXT_texture_filter_anisotropic
+[00:17:20] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric-api-base, fabric-resource-loader-v1, fabricloader, meteor-client
+[00:17:20] [Download-1/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
+[00:17:21] [Render thread/INFO] (Meteor Client) Force loading mixins
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.block.entity.AbstractSignBlockEntityRenderer
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.network.packet.s2c.play.EntityVelocityUpdateS2CPacket
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.entity.EndCrystalEntityRenderer
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.particle.FireworksSparkParticle$FireworkParticle
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.server.network.SynchronizeRegistriesTask
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.entity.projectile.ProjectileUtil
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.world.border.WorldBorder
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.entity.feature.ElytraFeatureRenderer
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.resource.ClientDataPackManager
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.block.entity.EnchantingTableBlockEntityRenderer
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.entity.model.EndCrystalEntityModel
+[00:17:21] [Worker-Main-3/INFO] (Minecraft) Found unifont_all_no_pua-17.0.01.hex, loading
+[00:17:21] [Worker-Main-9/INFO] (Minecraft) Found unifont_pua-17.0.01.hex, loading
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.screen.DisconnectedScreen
+[00:17:21] [Worker-Main-2/INFO] (Minecraft) Found unifont_jp_patch-17.0.01.hex, loading
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.hud.ChatHud$1
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.world.ClientChunkManager$ClientChunkMap
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.tooltip.BundleTooltipSubmenuHandler
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.world.entity.SectionedEntityCache
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.block.entity.BannerBlockEntityRenderer
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.hud.ChatHudLine
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.screen.ingame.AbstractFurnaceScreen
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.network.ClientPlayNetworkHandler
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.screen.ingame.BookEditScreen
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.entity.feature.CapeFeatureRenderer
+[00:17:21] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.server.network.ServerConfigurationNetworkHandler
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.screen.world.CreateWorldScreen
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.server.function.FunctionLoader
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.hud.ChatHud$Interactable
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.recipe.ServerRecipeManager
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.entity.feature.ArmorFeatureRenderer
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.block.entity.BeaconBlockEntityRenderer
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.screen.MountScreenHandler
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.network.ClientConnection
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.screen.pack.ResourcePackOrganizer
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.entity.feature.HeadFeatureRenderer
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.color.world.BiomeColors
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.world.BlockCollisionSpliterator
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.entity.ArmorStandEntityRenderer
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.network.BlockListChecker
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.network.packet.s2c.play.ExplosionS2CPacket
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.hud.ChatHudLine$Visible
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.network.packet.c2s.config.SelectKnownPacksC2SPacket
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.screen.ChatInputSuggestor
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.world.entity.EntityTrackingSection
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.world.ClientChunkManager
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.entity.ItemEntityRenderer
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.entity.state.EntityRenderState
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.hud.ChatHud$Hud
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.network.handler.PacketBundleHandler$1$1
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.debug.EntityHitboxDebugRenderer
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.world.entity.SimpleEntityLookup
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen$CreativeSlot
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.test.TestServer
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.screen.ingame.BookScreen
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.SkyRendering
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.entity.player.HungerManager
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.block.FluidRenderer
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.server.command.DatapackCommand
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.world.RaycastContext
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.server.DataPackContents
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class meteordevelopment.meteorclient.gui.screens.ModulesScreen$WCategoryController
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.server.dedicated.ServerPropertiesHandler
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.DrawContext
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.chunk.ChunkOcclusionDataBuilder
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.network.ClientPlayerInteractionManager
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.BlockRenderLayers
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.input.KeyboardInput
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.screen.ingame.BeaconScreen
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.screen.multiplayer.ConnectScreen
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.debug.ChunkBorderDebugRenderer
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.screen.ingame.AbstractSignEditScreen
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.server.ServerAdvancementLoader
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.screen.ingame.BrewingStandScreen
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.tooltip.TooltipComponent
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.block.entity.MobSpawnerBlockEntityRenderer
+[00:17:22] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.gui.screen.pack.PackListWidget$ResourcePackEntry
+[00:17:23] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.WorldRenderer$BrightnessGetter
+[00:17:23] [Render thread/INFO] (FabricLoader/Mixin/audit) Force-loading class net.minecraft.client.render.entity.LightningEntityRenderer
+[00:17:23] [Render thread/INFO] (Meteor Client) Initializing Meteor Client
+[00:17:24] [Render thread/INFO] (Reflections) Reflections took 959 ms to scan 1 urls, producing 27 keys and 1016 values
+[00:17:24] [Render thread/INFO] (Reflections) Reflections took 50 ms to scan 1 urls, producing 2 keys and 2 values
+[00:17:25] [Render thread/INFO] (Meteor Client) Found 73 font families.
+[00:17:25] [Render thread/INFO] (Meteor Client) Path Manager: none
+[00:17:26] [Render thread/INFO] (LayersAddon) Initializing Layers addon
+[00:17:27] [Render thread/INFO] (LayersAddon) LAYERS-TEST: auto test enabled, mode=full
+[00:17:27] [Render thread/INFO] (Meteor Client) Loading
+[00:17:27] [Render thread/INFO] (Meteor Client) Loaded in 93 milliseconds
+[00:17:31] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek(R) Audio)
+[00:17:31] [Render thread/INFO] (Minecraft) Sound engine started
+[00:17:31] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[00:17:31] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/decorated_pot.png-atlas
+[00:17:31] [Render thread/INFO] (Minecraft) Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas
+[00:17:31] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[00:17:31] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+[00:17:31] [Render thread/INFO] (Minecraft) Created: 2048x2048x4 minecraft:textures/atlas/blocks.png-atlas
+[00:17:31] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/chest.png-atlas
+[00:17:31] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/celestials.png-atlas
+[00:17:31] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+[00:17:31] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/beds.png-atlas
+[00:17:31] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/items.png-atlas
+[00:17:31] [Render thread/INFO] (Minecraft) Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
+[00:17:31] [Render thread/INFO] (Minecraft) Created: 128x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[00:17:31] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/signs.png-atlas
+[00:17:31] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+[00:17:32] [IO-Worker-1/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
+[00:17:33] [Meteor-Executor-1/ERROR] (Meteor Client) Could not fetch repository information for addon 'Meteor Client'.
+
+javax.net.ssl.SSLHandshakeException: (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:928)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at knot//meteordevelopment.meteorclient.utils.network.Http$Request._sendResponse(Http.java:121)
+	at knot//meteordevelopment.meteorclient.utils.network.Http$Request.sendJsonResponse(Http.java:175)
+	at knot//meteordevelopment.meteorclient.utils.player.TitleScreenCredits.lambda$init$2(TitleScreenCredits.java:53)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: javax.net.ssl.SSLHandshakeException: (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:130)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:376)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:319)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:314)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.checkServerCerts(CertificateMessage.java:1295)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.onConsumeCertificate(CertificateMessage.java:1172)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.consume(CertificateMessage.java:1115)
+	at java.base/sun.security.ssl.SSLHandshake.consume(SSLHandshake.java:421)
+	at java.base/sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:477)
+	at java.base/sun.security.ssl.SSLEngineImpl$DelegatedTask.run(SSLEngineImpl.java:1207)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate.lambda$executeTasks$0(SSLFlowDelegate.java:1156)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$DelegatingExecutor.execute(HttpClientImpl.java:168)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate.executeTasks(SSLFlowDelegate.java:1151)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate.doHandshake(SSLFlowDelegate.java:1117)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate$Reader.processData(SSLFlowDelegate.java:513)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate$Reader$ReaderDownstreamPusher.run(SSLFlowDelegate.java:283)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:182)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$TryEndDeferredCompleter.complete(SequentialScheduler.java:324)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:151)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+	at java.base/java.util.concurrent.ThreadPerTaskExecutor$TaskRunner.run(ThreadPerTaskExecutor.java:291)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:460)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at java.base/sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:387)
+	at java.base/sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:270)
+	at java.base/sun.security.validator.Validator.validate(Validator.java:256)
+	at java.base/sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:284)
+	at java.base/sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:144)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.checkServerCerts(CertificateMessage.java:1273)
+	... 19 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at java.base/sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:148)
+	at java.base/sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:129)
+	at java.base/java.security.cert.CertPathBuilder.build(CertPathBuilder.java:299)
+	at java.base/sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:382)
+	... 24 more
+[00:17:46] [Render thread/INFO] (LayersAddon) LAYERS-TEST: opening ModulesScreen (current screen: TitleScreen)
+[00:17:48] [Render thread/INFO] (LayersAddon) LAYERS-TEST report[默认层]: attach=true, window=true, list=true, label="1/1 Default"; categoryWindows=6, moduleRows=168; layers=1, active=Default, showAll=true, whitelist=0; statesSaved=false, enabled=0
+[00:17:48] [Render thread/INFO] (Minecraft) Resizing Meteor - Mesh UBO, capacity limit of 16 reached during a single frame. New capacity will be 32.
+[00:17:49] [Render thread/ERROR] (LayersAddon) LAYERS-TEST: no new screenshot found for layers-test-1.png
+[00:17:49] [Render thread/INFO] (LayersAddon) LAYERS-TEST report[空层]: attach=true, window=true, list=true, label="2/2 Layer"; categoryWindows=0, moduleRows=0; layers=2, active=Layer, showAll=false, whitelist=0; statesSaved=false, enabled=0 (期望 categoryWindows=0)
+[00:17:50] [Render thread/ERROR] (LayersAddon) LAYERS-TEST: no new screenshot found for layers-test-empty.png
+[00:17:50] [Render thread/INFO] (LayersAddon) LAYERS-TEST report[空层勾选一个模块后]: attach=true, window=true, list=true, label="2/2 Layer"; categoryWindows=1, moduleRows=1; layers=2, active=Layer, showAll=false, whitelist=1; statesSaved=false, enabled=0 (期望 moduleRows=1)
+[00:17:51] [Render thread/INFO] (LayersAddon) LAYERS-TEST report[再次取消勾选后]: attach=true, window=true, list=true, label="2/2 Layer"; categoryWindows=0, moduleRows=0; layers=2, active=Layer, showAll=false, whitelist=0; statesSaved=false, enabled=0 (期望 moduleRows=0)
+[00:17:52] [Render thread/INFO] (LayersAddon) LAYERS-TEST report[切回 Default]: attach=true, window=true, list=true, label="1/2 Default"; categoryWindows=6, moduleRows=168; layers=2, active=Default, showAll=true, whitelist=0; statesSaved=true, enabled=1 (期望 showAll=true, moduleRows=167)
+[00:17:52] [Render thread/INFO] (LayersAddon) LAYERS-TEST report[Default 取消勾选后]: attach=true, window=true, list=true, label="1/2 Default"; categoryWindows=6, moduleRows=167; layers=2, active=Default, showAll=false, whitelist=167; statesSaved=true, enabled=1 (期望 showAll=false, whitelist=167, moduleRows=166)
+[00:17:53] [Render thread/INFO] (LayersAddon) LAYERS-TEST report[Default 重新勾选后]: attach=true, window=true, list=true, label="1/2 Default"; categoryWindows=6, moduleRows=168; layers=2, active=Default, showAll=false, whitelist=168; statesSaved=true, enabled=1 (期望 whitelist=168)
+[00:17:53] [Render thread/INFO] (LayersAddon) LAYERS-TEST naming: add("Layer") x2 -> "Layer 2", "Layer 3"
+[00:17:53] [Render thread/INFO] (LayersAddon) LAYERS-TEST report[清理后]: attach=true, window=true, list=true, label="2/2 Layer"; categoryWindows=0, moduleRows=0; layers=2, active=Layer, showAll=false, whitelist=0; statesSaved=true, enabled=1
+[00:17:53] [Render thread/INFO] (LayersAddon) LAYERS-TEST states: sprint enabled on layer "Layer"
+[00:17:53] [Render thread/INFO] (LayersAddon) LAYERS-TEST states: switch to "Default": isActive=true expected=true -> OK
+[00:17:53] [Render thread/INFO] (LayersAddon) LAYERS-TEST states: switch to "Layer": isActive=true expected=true -> OK
+[00:17:54] [Render thread/INFO] (LayersAddon) LAYERS-TEST category-toggle [Combat]: before=0 shown=0 afterOff=0 (期望 0) afterOn=29 (期望 29) -> OK
+[00:17:56] [Render thread/ERROR] (LayersAddon) LAYERS-TEST: no new screenshot found for layers-test-2.png
+[00:17:56] [Render thread/INFO] (LayersAddon) LAYERS-TEST: state restored (layers=1, activeIndex=0)
+[00:17:56] [Render thread/INFO] (LayersAddon) LAYERS-TEST layers.json saved: true
+[00:17:56] [Render thread/INFO] (LayersAddon) LAYERS-TEST: DONE, stopping game
+[00:17:57] [Render thread/INFO] (Minecraft) Stopping!
+[00:17:57] [Thread-6/INFO] (Meteor Client) Saving
+
+BUILD SUCCESSFUL in 1m 29s
+7 actionable tasks: 5 executed, 2 up-to-date
+Configuration cache entry stored.

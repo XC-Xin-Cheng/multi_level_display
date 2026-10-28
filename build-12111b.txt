@@ -1,0 +1,196 @@
+Calculating task graph as no cached configuration is available for tasks: build
+
+> Configure project :
+Fabric Loom: 1.14.10
+Previous process has disowned the lock due to abrupt termination.
+Found existing cache lock file (ACQUIRED_PREVIOUS_OWNER_DISOWNED), rebuilding loom cache. This may have been caused by a failed or canceled build.
+
+Cannot remap onEntityCollision because it does not exists in any of the targets [net/minecraft/class_2560]
+Cannot remap method_9548 because it does not exists in any of the targets [net/minecraft/class_2560]
+Cannot remap onEntityCollision because it does not exists in any of the targets [net/minecraft/class_3830]
+Cannot remap method_9548 because it does not exists in any of the targets [net/minecraft/class_3830]
+Cannot remap onEntityCollision because it does not exists in any of the targets [net/minecraft/class_2560]
+Cannot remap method_9548 because it does not exists in any of the targets [net/minecraft/class_2560]
+Cannot remap onEntityCollision because it does not exists in any of the targets [net/minecraft/class_3830]
+Cannot remap method_9548 because it does not exists in any of the targets [net/minecraft/class_3830]
+
+> Configure project :
+:remapping sources
+
+> Task :remapSourcesJar SKIPPED
+> Task :validateAccessWidener NO-SOURCE
+> Task :processTestResources NO-SOURCE
+> Task :processIncludeJars
+> Task :processResources
+
+> Task :compileJava
+C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\LayersAutoTest.java:6: 错误: 找不到符号
+import com.mojang.blaze3d.platform.NativeImage;
+                                  ^
+  符号:   类 NativeImage
+  位置: 程序包 com.mojang.blaze3d.platform
+C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:12: 错误: LayerCommand不是抽象的, 并且未覆盖Command中的抽象方法build(LiteralArgumentBuilder<CommandSource>)
+public class LayerCommand extends Command {
+       ^
+C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:18: 错误: 名称冲突: LayerCommand 中的 build(LiteralArgumentBuilder<ClientCommandSource>) 和 Command 中的 build(LiteralArgumentBuilder<CommandSource>) 具有相同疑符, 但两者均不覆盖对方
+    public void build(LiteralArgumentBuilder<ClientCommandSource> builder) {
+                ^
+C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:17: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:28: 错误: 对于then(LiteralArgumentBuilder<CommandSource>), 找不到合适的方法
+        builder.then(literal("next").executes(context -> {
+               ^
+    方法 ArgumentBuilder.then(ArgumentBuilder<ClientCommandSource,?>)不适用
+      (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为ArgumentBuilder<ClientCommandSource,?>)
+    方法 ArgumentBuilder.then(CommandNode<ClientCommandSource>)不适用
+      (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为CommandNode<ClientCommandSource>)
+C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:34: 错误: 对于then(LiteralArgumentBuilder<CommandSource>), 找不到合适的方法
+        builder.then(literal("prev").executes(context -> {
+               ^
+    方法 ArgumentBuilder.then(ArgumentBuilder<ClientCommandSource,?>)不适用
+      (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为ArgumentBuilder<ClientCommandSource,?>)
+    方法 ArgumentBuilder.then(CommandNode<ClientCommandSource>)不适用
+      (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为CommandNode<ClientCommandSource>)
+C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:40: 错误: 对于then(LiteralArgumentBuilder<CommandSource>), 找不到合适的方法
+        builder.then(literal("add").then(argument("name", StringArgumentType.greedyString()).executes(context -> {
+               ^
+    方法 ArgumentBuilder.then(ArgumentBuilder<ClientCommandSource,?>)不适用
+      (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为ArgumentBuilder<ClientCommandSource,?>)
+    方法 ArgumentBuilder.then(CommandNode<ClientCommandSource>)不适用
+      (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为CommandNode<ClientCommandSource>)
+C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:47: 错误: 对于then(LiteralArgumentBuilder<CommandSource>), 找不到合适的方法
+        builder.then(literal("remove").then(argument("name", StringArgumentType.greedyString()).executes(context -> {
+               ^
+    方法 ArgumentBuilder.then(ArgumentBuilder<ClientCommandSource,?>)不适用
+      (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为ArgumentBuilder<ClientCommandSource,?>)
+    方法 ArgumentBuilder.then(CommandNode<ClientCommandSource>)不适用
+      (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为CommandNode<ClientCommandSource>)
+C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:54: 错误: 对于then(LiteralArgumentBuilder<CommandSource>), 找不到合适的方法
+        builder.then(literal("set").then(argument("name", StringArgumentType.greedyString()).suggests((context, suggestions) -> {
+               ^
+    方法 ArgumentBuilder.then(ArgumentBuilder<ClientCommandSource,?>)不适用
+      (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为ArgumentBuilder<ClientCommandSource,?>)
+    方法 ArgumentBuilder.then(CommandNode<ClientCommandSource>)不适用
+      (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为CommandNode<ClientCommandSource>)
+C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:64: 错误: 对于then(LiteralArgumentBuilder<CommandSource>), 找不到合适的方法
+        builder.then(literal("rename").then(argument("name", StringArgumentType.greedyString()).executes(context -> {
+               ^
+    方法 ArgumentBuilder.then(ArgumentBuilder<ClientCommandSource,?>)不适用
+      (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为ArgumentBuilder<ClientCommandSource,?>)
+    方法 ArgumentBuilder.then(CommandNode<ClientCommandSource>)不适用
+      (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为CommandNode<ClientCommandSource>)
+C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:71: 错误: 对于then(LiteralArgumentBuilder<CommandSource>), 找不到合适的方法
+        builder.then(literal("showall").executes(context -> {
+               ^
+    方法 ArgumentBuilder.then(ArgumentBuilder<ClientCommandSource,?>)不适用
+      (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为ArgumentBuilder<ClientCommandSource,?>)
+    方法 ArgumentBuilder.then(CommandNode<ClientCommandSource>)不适用
+      (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为CommandNode<ClientCommandSource>)
+C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:87: 错误: 对于then(LiteralArgumentBuilder<CommandSource>), 找不到合适的方法
+        builder.then(literal("list").executes(context -> {
+               ^
+    方法 ArgumentBuilder.then(ArgumentBuilder<ClientCommandSource,?>)不适用
+      (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为ArgumentBuilder<ClientCommandSource,?>)
+    方法 ArgumentBuilder.then(CommandNode<ClientCommandSource>)不适用
+      (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为CommandNode<ClientCommandSource>)
+C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\LayersAutoTest.java:289: 错误: 找不到符号
+                    image.writeToFile(out);
+                         ^
+  符号:   方法 writeToFile(File)
+  位置: 类型为NativeImage的变量 image
+13 个错误
+
+> Task :compileJava FAILED
+
+[Incubating] Problems report is available at: file:///C:/Users/qhad/.zcode/workspace/draft-ce5cb790-acba-4c36-839f-bf89ca2e6526/multi_level_display/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler output below.
+  C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:28: 错误: 对于then(LiteralArgumentBuilder<CommandSource>), 找不到合适的方法
+          builder.then(literal("next").executes(context -> {
+                 ^
+      方法 ArgumentBuilder.then(ArgumentBuilder<ClientCommandSource,?>)不适用
+        (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为ArgumentBuilder<ClientCommandSource,?>)
+      方法 ArgumentBuilder.then(CommandNode<ClientCommandSource>)不适用
+        (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为CommandNode<ClientCommandSource>)
+  C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:34: 错误: 对于then(LiteralArgumentBuilder<CommandSource>), 找不到合适的方法
+          builder.then(literal("prev").executes(context -> {
+                 ^
+      方法 ArgumentBuilder.then(ArgumentBuilder<ClientCommandSource,?>)不适用
+        (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为ArgumentBuilder<ClientCommandSource,?>)
+      方法 ArgumentBuilder.then(CommandNode<ClientCommandSource>)不适用
+        (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为CommandNode<ClientCommandSource>)
+  C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:40: 错误: 对于then(LiteralArgumentBuilder<CommandSource>), 找不到合适的方法
+          builder.then(literal("add").then(argument("name", StringArgumentType.greedyString()).executes(context -> {
+                 ^
+      方法 ArgumentBuilder.then(ArgumentBuilder<ClientCommandSource,?>)不适用
+        (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为ArgumentBuilder<ClientCommandSource,?>)
+      方法 ArgumentBuilder.then(CommandNode<ClientCommandSource>)不适用
+        (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为CommandNode<ClientCommandSource>)
+  C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:47: 错误: 对于then(LiteralArgumentBuilder<CommandSource>), 找不到合适的方法
+          builder.then(literal("remove").then(argument("name", StringArgumentType.greedyString()).executes(context -> {
+                 ^
+      方法 ArgumentBuilder.then(ArgumentBuilder<ClientCommandSource,?>)不适用
+        (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为ArgumentBuilder<ClientCommandSource,?>)
+      方法 ArgumentBuilder.then(CommandNode<ClientCommandSource>)不适用
+        (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为CommandNode<ClientCommandSource>)
+  C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:54: 错误: 对于then(LiteralArgumentBuilder<CommandSource>), 找不到合适的方法
+          builder.then(literal("set").then(argument("name", StringArgumentType.greedyString()).suggests((context, suggestions) -> {
+                 ^
+      方法 ArgumentBuilder.then(ArgumentBuilder<ClientCommandSource,?>)不适用
+        (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为ArgumentBuilder<ClientCommandSource,?>)
+      方法 ArgumentBuilder.then(CommandNode<ClientCommandSource>)不适用
+        (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为CommandNode<ClientCommandSource>)
+  C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:64: 错误: 对于then(LiteralArgumentBuilder<CommandSource>), 找不到合适的方法
+          builder.then(literal("rename").then(argument("name", StringArgumentType.greedyString()).executes(context -> {
+                 ^
+      方法 ArgumentBuilder.then(ArgumentBuilder<ClientCommandSource,?>)不适用
+        (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为ArgumentBuilder<ClientCommandSource,?>)
+      方法 ArgumentBuilder.then(CommandNode<ClientCommandSource>)不适用
+        (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为CommandNode<ClientCommandSource>)
+  C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:71: 错误: 对于then(LiteralArgumentBuilder<CommandSource>), 找不到合适的方法
+          builder.then(literal("showall").executes(context -> {
+                 ^
+      方法 ArgumentBuilder.then(ArgumentBuilder<ClientCommandSource,?>)不适用
+        (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为ArgumentBuilder<ClientCommandSource,?>)
+      方法 ArgumentBuilder.then(CommandNode<ClientCommandSource>)不适用
+        (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为CommandNode<ClientCommandSource>)
+  C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:87: 错误: 对于then(LiteralArgumentBuilder<CommandSource>), 找不到合适的方法
+          builder.then(literal("list").executes(context -> {
+                 ^
+      方法 ArgumentBuilder.then(ArgumentBuilder<ClientCommandSource,?>)不适用
+        (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为ArgumentBuilder<ClientCommandSource,?>)
+      方法 ArgumentBuilder.then(CommandNode<ClientCommandSource>)不适用
+        (参数不匹配; LiteralArgumentBuilder<CommandSource>无法转换为CommandNode<ClientCommandSource>)
+  C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:18: 错误: 名称冲突: LayerCommand 中的 build(LiteralArgumentBuilder<ClientCommandSource>) 和 Command 中的 build(LiteralArgumentBuilder<CommandSource>) 具有相同疑符, 但两者均不覆盖对方
+      public void build(LiteralArgumentBuilder<ClientCommandSource> builder) {
+                  ^
+  C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:12: 错误: LayerCommand不是抽象的, 并且未覆盖Command中的抽象方法build(LiteralArgumentBuilder<CommandSource>)
+  public class LayerCommand extends Command {
+         ^
+  C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\LayersAutoTest.java:6: 错误: 找不到符号
+  import com.mojang.blaze3d.platform.NativeImage;
+                                    ^
+    符号:   类 NativeImage
+    位置: 程序包 com.mojang.blaze3d.platform
+  C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\commands\LayerCommand.java:17: 错误: 方法不会覆盖或实现超类型的方法
+      @Override
+      ^
+  C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\LayersAutoTest.java:289: 错误: 找不到符号
+                      image.writeToFile(out);
+                           ^
+    符号:   方法 writeToFile(File)
+    位置: 类型为NativeImage的变量 image
+  13 个错误
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to generate a Build Scan (powered by Develocity).
+
+BUILD FAILED in 6m 54s
+3 actionable tasks: 3 executed
+Configuration cache entry stored.

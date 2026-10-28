@@ -1,0 +1,44 @@
+Reusing configuration cache.
+> Task :remapSourcesJar SKIPPED
+> Task :validateAccessWidener NO-SOURCE
+> Task :processTestResources NO-SOURCE
+> Task :processResources UP-TO-DATE
+> Task :processIncludeJars UP-TO-DATE
+
+> Task :compileJava
+C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\LayersAutoTest.java:311: 错误: 不兼容的类型: String无法转换为File
+        for (File f : listScreenshots()) {
+                                     ^
+C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\LayersAutoTest.java:323: 错误: 找不到符号
+            File out = Path.of(targetName).toAbsolutePath().toFile();
+                       ^
+  符号:   变量 Path
+  位置: 类 LayersAutoTest
+2 个错误
+
+> Task :compileJava FAILED
+
+[Incubating] Problems report is available at: file:///C:/Users/qhad/.zcode/workspace/draft-ce5cb790-acba-4c36-839f-bf89ca2e6526/multi_level_display/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler output below.
+  C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\LayersAutoTest.java:311: 错误: 不兼容的类型: String无法转换为File
+          for (File f : listScreenshots()) {
+                                       ^
+  C:\Users\qhad\.zcode\workspace\draft-ce5cb790-acba-4c36-839f-bf89ca2e6526\multi_level_display\src\main\java\com\example\layers\LayersAutoTest.java:323: 错误: 找不到符号
+              File out = Path.of(targetName).toAbsolutePath().toFile();
+                         ^
+    符号:   变量 Path
+    位置: 类 LayersAutoTest
+  2 个错误
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to generate a Build Scan (powered by Develocity).
+
+BUILD FAILED in 5s
+3 actionable tasks: 1 executed, 2 up-to-date
+Configuration cache entry reused.

@@ -1,0 +1,33 @@
+
+Welcome to Gradle 9.2.0!
+
+Here are the highlights of this release:
+ - Windows ARM support
+ - Improved publishing APIs
+ - Better guidance for dependency verification failures
+
+For more details see https://docs.gradle.org/9.2.0/release-notes.html
+
+Starting a Gradle Daemon, 4 busy Daemons could not be reused, use --status for details
+Calculating task graph as no cached configuration is available for tasks: build
+
+> Configure project :
+Fabric Loom: 1.14.10
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'layers-addon'.
+> Could not resolve all files for configuration ':mappings'.
+   > Could not download yarn-1.21.11+build.3-v2.jar (net.fabricmc:yarn:1.21.11+build.3)
+      > Could not get resource 'https://maven.fabricmc.net/net/fabricmc/yarn/1.21.11+build.3/yarn-1.21.11+build.3-v2.jar'.
+         > Read timed out
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to generate a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 7m 16s
+Configuration cache entry stored.

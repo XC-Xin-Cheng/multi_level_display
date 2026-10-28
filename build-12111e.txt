@@ -1,0 +1,20 @@
+Reusing configuration cache.
+> Task :remapSourcesJar SKIPPED
+> Task :validateAccessWidener NO-SOURCE
+> Task :processTestResources NO-SOURCE
+> Task :processIncludeJars UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :compileJava
+> Task :classes
+> Task :compileTestJava NO-SOURCE
+> Task :testClasses UP-TO-DATE
+> Task :test NO-SOURCE
+> Task :check UP-TO-DATE
+> Task :jar
+> Task :remapJar
+> Task :assemble
+> Task :build
+
+BUILD SUCCESSFUL in 20s
+5 actionable tasks: 3 executed, 2 up-to-date
+Configuration cache entry reused.
