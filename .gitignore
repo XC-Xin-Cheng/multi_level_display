@@ -36,3 +36,8 @@ run/
 build-log*.txt
 run-log.txt
 real-run-log*.txt
+
+# 本地测试日志
+build-*.txt
+run-log*.txt
+real-run-log*.txt

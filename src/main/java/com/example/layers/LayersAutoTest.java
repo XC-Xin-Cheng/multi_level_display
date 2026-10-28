@@ -3,7 +3,7 @@ package com.example.layers;
 import com.example.layers.gui.LayerGui;
 import com.example.layers.layers.Layer;
 import com.example.layers.layers.Layers;
-import com.mojang.blaze3d.platform.NativeImage;
+import net.minecraft.client.texture.NativeImage;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.gui.GuiThemes;
@@ -12,14 +12,18 @@ import meteordevelopment.meteorclient.systems.modules.Category;
 import meteordevelopment.meteorclient.systems.modules.Module;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 import meteordevelopment.orbit.EventHandler;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.Screenshot;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.util.ScreenshotRecorder;
 import org.slf4j.Logger;
 
 import java.io.File;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * 仅在以 -Dlayers.autotest 启动时生效：
@@ -36,6 +40,9 @@ public class LayersAutoTest {
     private int initialLayerCount;
     private int initialActiveIndex;
 
+    private final File screenshotsDir = new File(".").getAbsoluteFile();
+    private Set<String> knownScreenshots = Set.of();
+
     public LayersAutoTest() {
         this.safe = "safe".equalsIgnoreCase(System.getProperty("layers.autotest"));
     }
@@ -50,15 +57,15 @@ public class LayersAutoTest {
 
     @EventHandler
     private void onTick(TickEvent.Post event) {
-        Minecraft mc = MeteorClient.mc;
+        MinecraftClient mc = MeteorClient.mc;
         tick++;
 
         switch (stage) {
             case 0 -> {
                 // 主菜单本身有 TitleScreen，所以只判断不在世界里，等标题界面加载完
-                if (mc.level == null && tick > 300) {
+                if (mc.world == null && tick > 300) {
                     LayersAddon.LOG.info("LAYERS-TEST: opening ModulesScreen (current screen: {})",
-                        mc.screen == null ? "null" : mc.screen.getClass().getSimpleName());
+                        mc.currentScreen == null ? "null" : mc.currentScreen.getClass().getSimpleName());
                     mc.setScreen(new ModulesScreen(GuiThemes.get()));
                     enterStage(1);
                 }
@@ -77,13 +84,14 @@ public class LayersAutoTest {
 
                     LayerGui.setSectionsExpanded(true); // 展开分类，截图里能看到批量开关
                     log.info("LAYERS-TEST report[默认层]: {}", LayerGui.selfTest());
+                    requestScreenshot();
                     enterStage(2);
                 }
             }
             case 2 -> {
-                // 等展开状态渲染完成后截图
-                if (ticksInStage() >= 15) {
-                    screenshot("layers-test-1.png");
+                // 等展开状态渲染、官方截图落盘后收集改名
+                if (ticksInStage() >= 20) {
+                    collectScreenshot("layers-test-1.png");
 
                     if (safe) {
                         LayersAddon.LOG.info("LAYERS-TEST: safe mode, skipping data-changing stages");
@@ -100,12 +108,13 @@ public class LayersAutoTest {
                 if (ticksInStage() >= 15) {
                     LayersAddon.LOG.info("LAYERS-TEST report[空层]: {} (期望 categoryWindows=0)",
                         LayerGui.selfTest());
-                    screenshot("layers-test-empty.png");
+                    requestScreenshot();
                     enterStage(4);
                 }
             }
             case 4 -> {
-                if (ticksInStage() >= 15) {
+                if (ticksInStage() >= 20) {
+                    collectScreenshot("layers-test-empty.png");
                     // 勾选列表里第一个模块的显示勾选框，走真实点击路径（action 回调）
                     var checkbox = LayerGui.firstCheckbox();
                     if (checkbox != null) {
@@ -222,8 +231,14 @@ public class LayersAutoTest {
                 }
             }
             case 10 -> {
-                if (ticksInStage() >= 15) {
-                    screenshot("layers-test-2.png");
+                if (ticksInStage() >= 20) {
+                    requestScreenshot();
+                    enterStage(11);
+                }
+            }
+            case 11 -> {
+                if (ticksInStage() >= 20) {
+                    collectScreenshot("layers-test-2.png");
 
                     // full 模式：恢复测试前的现场（模块状态、层数据）
                     if (!safe && stateSnapshot != null) {
@@ -253,12 +268,12 @@ public class LayersAutoTest {
                     boolean saved = new File("meteor-client/layers.json").exists();
                     LayersAddon.LOG.info("LAYERS-TEST layers.json saved: {}", saved);
                     LayersAddon.LOG.info("LAYERS-TEST: DONE, stopping game");
-                    enterStage(11);
+                    enterStage(12);
                 }
             }
-            case 11 -> {
+            case 12 -> {
                 if (ticksInStage() >= 10) {
-                    mc.stop();
+                    mc.scheduleStop();
                 }
             }
         }
@@ -281,19 +296,48 @@ public class LayersAutoTest {
         return count;
     }
 
-    private void screenshot(String name) {
+    /** 调用官方一站式截图（写入 gameDir/screenshots/，文件名为时间戳）。 */
+    private void requestScreenshot() {
         try {
-            File out = Path.of(name).toAbsolutePath().toFile();
-            Screenshot.takeScreenshot(MeteorClient.mc.getMainRenderTarget(), image -> {
-                try {
-                    image.writeToFile(out);
-                    LayersAddon.LOG.info("LAYERS-TEST: screenshot -> {}", out);
-                } catch (Exception e) {
-                    LayersAddon.LOG.error("LAYERS-TEST: screenshot write failed", e);
-                }
-            });
+            knownScreenshots = listScreenshots();
+            ScreenshotRecorder.saveScreenshot(new File("."), MeteorClient.mc.getFramebuffer(), message -> { });
         } catch (Exception e) {
             LayersAddon.LOG.error("LAYERS-TEST: screenshot error", e);
         }
+    }
+
+    /** 找出新生成的截图文件并复制为目标名。 */
+    private void collectScreenshot(String targetName) {
+        File latest = null;
+        File[] files = screenshotsDir.listFiles((dir, n) -> n.endsWith(".png"));
+        if (files != null) {
+            for (File f : files) {
+                if (!knownScreenshots.contains(f.getName()) && (latest == null || f.lastModified() > latest.lastModified())) {
+                    latest = f;
+                }
+            }
+        }
+
+        if (latest == null) {
+            LayersAddon.LOG.error("LAYERS-TEST: no new screenshot found for {}", targetName);
+            return;
+        }
+
+        try {
+            File out = Path.of(targetName).toAbsolutePath().toFile();
+            Files.copy(latest.toPath(), out.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            LayersAddon.LOG.info("LAYERS-TEST: screenshot {} -> {}", latest.getName(), out);
+        } catch (Exception e) {
+            LayersAddon.LOG.error("LAYERS-TEST: screenshot copy failed", e);
+        }
+    }
+
+    private Set<String> listScreenshots() {
+        Set<String> names = new HashSet<>();
+        File[] files = screenshotsDir.listFiles((dir, n) -> n.endsWith(".png"));
+        if (files != null) {
+            for (File f : files) names.add(f.getName());
+        }
+        return names;
     }
 }
