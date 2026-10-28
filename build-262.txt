@@ -1,0 +1,22 @@
+Calculating task graph as configuration cache cannot be reused because the file system entry '..\..\..\..\.gradle\caches\fabric-loom\26.2\mojang_minecraft_info.json' has been created.
+
+> Configure project :
+Fabric Loom: 1.18.4
+
+> Task :validateAccessWidener NO-SOURCE
+> Task :processTestResources NO-SOURCE
+> Task :processIncludeJars UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :compileJava
+> Task :classes
+> Task :compileTestJava NO-SOURCE
+> Task :testClasses UP-TO-DATE
+> Task :test NO-SOURCE
+> Task :check UP-TO-DATE
+> Task :jar
+> Task :assemble
+> Task :build
+
+BUILD SUCCESSFUL in 12s
+4 actionable tasks: 2 executed, 2 up-to-date
+Configuration cache entry stored.

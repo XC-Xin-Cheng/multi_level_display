@@ -58,8 +58,8 @@ public class LayersAutoTest {
                 // 主菜单本身有 TitleScreen，所以只判断不在世界里，等标题界面加载完
                 if (mc.level == null && tick > 300) {
                     LayersAddon.LOG.info("LAYERS-TEST: opening ModulesScreen (current screen: {})",
-                        mc.screen == null ? "null" : mc.screen.getClass().getSimpleName());
-                    mc.setScreen(new ModulesScreen(GuiThemes.get()));
+                        mc.gui.screen() == null ? "null" : mc.gui.screen().getClass().getSimpleName());
+                    mc.gui.setScreen(new ModulesScreen(GuiThemes.get()));
                     enterStage(1);
                 }
             }
@@ -284,7 +284,7 @@ public class LayersAutoTest {
     private void screenshot(String name) {
         try {
             File out = Path.of(name).toAbsolutePath().toFile();
-            Screenshot.takeScreenshot(MeteorClient.mc.getMainRenderTarget(), image -> {
+            Screenshot.takeScreenshot(MeteorClient.mc.gameRenderer.mainRenderTarget(), image -> {
                 try {
                     image.writeToFile(out);
                     LayersAddon.LOG.info("LAYERS-TEST: screenshot -> {}", out);

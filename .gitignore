@@ -36,3 +36,6 @@ run/
 build-log*.txt
 run-log.txt
 real-run-log*.txt
+
+build-*.txt
+run-log*.txt
